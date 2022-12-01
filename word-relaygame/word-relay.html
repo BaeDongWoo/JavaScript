@@ -15,7 +15,8 @@
   const number = parseInt(prompt("몇 명이 참가하나요?"));//사용자에게 입력을 받음
   const $button = document.querySelector("button");
   const $input = document.querySelector("input");
-  const $word = document.querySelector("#word")
+  const $word = document.querySelector("#word");
+  const $order = document.querySelector("#order");
   let word;
   let newWord;
   //alert(number);//경고창 출력
@@ -24,10 +25,30 @@
     if(!word){//제시어가 비어있는가?
       word=newWord;//입력한 단어가 제시어
       $word.textContent=word;
-      $input.value = " ";
+      $input.value = "";
+      const order=parseInt($order.textContent);
+      if(order+1>number){
+        $order.textContent =1;
+      }
+      else{
+        $order.textContent =order+1;
+      }
     }
     else{
-
+      if(word[word.length - 1]===newWord[0]){
+        word=newWord;
+        $word.textContent=word;
+        $input.value = "";
+        const order=parseInt($order.textContent);
+        if(order+1>number){
+          $order.textContent =1;
+        }
+        else{
+          $order.textContent =order+1;
+        }
+      }
+      else{
+      }
     }
   };
   const onInput=(event)=>{
