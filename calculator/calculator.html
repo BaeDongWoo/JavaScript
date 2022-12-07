@@ -42,16 +42,27 @@ let operator='';
 let numTwo ='';
 const $operator = document.querySelector('#operator');
 const $result = document.querySelector('#result');
-document.querySelector('#num-0').addEventListener('click',()=>{});
-document.querySelector('#num-1').addEventListener('click',()=>{});
-document.querySelector('#num-2').addEventListener('click',()=>{});
-document.querySelector('#num-3').addEventListener('click',()=>{});
-document.querySelector('#num-4').addEventListener('click',()=>{});
-document.querySelector('#num-5').addEventListener('click',()=>{});
-document.querySelector('#num-6').addEventListener('click',()=>{});
-document.querySelector('#num-7').addEventListener('click',()=>{});
-document.querySelector('#num-8').addEventListener('click',()=>{});
-document.querySelector('#num-9').addEventListener('click',()=>{});
+const onclickNumber =(number)=>{//고차함수 
+  return()=>{
+    if(operator){
+    numTwo+=number;
+  }
+  else{
+    numOne+=number;
+  }
+  $result.value +=number;
+  }
+}
+document.querySelector('#num-0').addEventListener('click',onclickNumber('0'));
+document.querySelector('#num-1').addEventListener('click',onclickNumber('1'));
+document.querySelector('#num-2').addEventListener('click',onclickNumber('2'));
+document.querySelector('#num-3').addEventListener('click',onclickNumber('3'));
+document.querySelector('#num-4').addEventListener('click',onclickNumber('4'));
+document.querySelector('#num-5').addEventListener('click',onclickNumber('5'));
+document.querySelector('#num-6').addEventListener('click',onclickNumber('6'));
+document.querySelector('#num-7').addEventListener('click',onclickNumber('7'));
+document.querySelector('#num-8').addEventListener('click',onclickNumber('8'));
+document.querySelector('#num-9').addEventListener('click',onclickNumber('9'));
 document.querySelector('#plus').addEventListener('click',()=>{});
 document.querySelector('#minus').addEventListener('click',()=>{});
 document.querySelector('#divide').addEventListener('click',()=>{});
