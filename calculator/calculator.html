@@ -44,6 +44,9 @@ const $operator = document.querySelector('#operator');
 const $result = document.querySelector('#result');
 const onclickNumber =(number)=>(event)=>{//고차함수  
   if(operator){
+    if(!numTwo){//numTwo가 입력 되기 전 화면을 지우고 numTwo를 표시
+      $result.value='';
+    }
     numTwo+=number;
   }
   else{
@@ -74,7 +77,26 @@ document.querySelector('#plus').addEventListener('click',onclickOperator('+'));
 document.querySelector('#minus').addEventListener('click',onclickOperator('-'));
 document.querySelector('#divide').addEventListener('click',onclickOperator('/'));
 document.querySelector('#multiply').addEventListener('click',onclickOperator('*'));
-document.querySelector('#calculator').addEventListener('click',()=>{});
-document.querySelector('#clear').addEventListener('click',()=>{});
+
+document.querySelector('#calculate').addEventListener('click',()=>{
+  if(numTwo){
+   if(operator){
+    if(operator=='+'){
+      $result.value=parseInt(numOne)+parseInt(numTwo);
+    }
+    else if(operator=='-'){
+      $result.value=parseInt(numOne)-parseInt(numTwo);
+    }
+    else if(operator=='/'){
+      $result.value=parseInt(numOne)/parseInt(numTwo);
+    }
+    else if(operator=='*'){
+      $result.value=parseInt(numOne)*parseInt(numTwo);
+    }  
+  }
+}
+});
+document.querySelector('#clear').addEventListener('click',()=>{
+});
 </script>
 </body>
