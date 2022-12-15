@@ -44,6 +44,9 @@ const $operator = document.querySelector('#operator');
 const $result = document.querySelector('#result');
 const onclickNumber =(number)=>(event)=>{//고차함수  
   if(operator){
+    if(!numTwo){//numTwo가 입력 되기 전 화면을 지우고 numTwo를 표시
+      $result.value='';
+    }
     numTwo+=number;
   }
   else{
