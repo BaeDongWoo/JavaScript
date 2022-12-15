@@ -42,16 +42,14 @@ let operator='';
 let numTwo ='';
 const $operator = document.querySelector('#operator');
 const $result = document.querySelector('#result');
-const onclickNumber =(number)=>{//고차함수 
-  return()=>{
-    if(operator){
+const onclickNumber =(number)=>(event)=>{//고차함수  
+  if(operator){
     numTwo+=number;
   }
   else{
     numOne+=number;
   }
-  $result.value +=number;
-  }
+  $result.value +=number; 
 }
 document.querySelector('#num-0').addEventListener('click',onclickNumber('0'));
 document.querySelector('#num-1').addEventListener('click',onclickNumber('1'));
@@ -63,10 +61,19 @@ document.querySelector('#num-6').addEventListener('click',onclickNumber('6'));
 document.querySelector('#num-7').addEventListener('click',onclickNumber('7'));
 document.querySelector('#num-8').addEventListener('click',onclickNumber('8'));
 document.querySelector('#num-9').addEventListener('click',onclickNumber('9'));
-document.querySelector('#plus').addEventListener('click',()=>{});
-document.querySelector('#minus').addEventListener('click',()=>{});
-document.querySelector('#divide').addEventListener('click',()=>{});
-document.querySelector('#multiply').addEventListener('click',()=>{});
+const onclickOperator = (op)=>()=>{
+  if(numOne){
+    operator=op;
+    $operator.value=op;
+  }
+  else{
+    alert('숫자를 먼저 입력하세요.');
+  }
+}
+document.querySelector('#plus').addEventListener('click',onclickOperator('+'));
+document.querySelector('#minus').addEventListener('click',onclickOperator('-'));
+document.querySelector('#divide').addEventListener('click',onclickOperator('/'));
+document.querySelector('#multiply').addEventListener('click',onclickOperator('*'));
 document.querySelector('#calculator').addEventListener('click',()=>{});
 document.querySelector('#clear').addEventListener('click',()=>{});
 </script>
