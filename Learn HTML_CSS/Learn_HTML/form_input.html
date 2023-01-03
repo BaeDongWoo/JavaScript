@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Input</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>Input Tag</legend>
+        <ul>
+          <li>
+            <label for="text">텍스트</label>
+            <input type="text" id="text" />
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input type="email" id="email" />
+          </li>
+          <li>
+            <label>
+              전화번호
+              <input type="tel" id="tel" />
+            </label>
+          </li>
+          <li>
+            <label>
+              url
+              <input type="url" id="url" />
+            </label>
+          </li>
+          <li>
+            <label>
+              숫자
+              <input type="number" id="number" min="5" max="10" />
+            </label>
+          </li>
+          <li>
+            <label>
+              범위
+              <input type="range" id="range" min="5" max="10" />
+            </label>
+          </li>
+        </ul>
+      </fieldset>
+      <input type="submit" value="제출하기" />
+    </form>
+  </body>
+</html>
