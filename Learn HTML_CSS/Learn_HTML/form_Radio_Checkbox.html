@@ -52,6 +52,22 @@
 저는 배동우 입니다. </textarea
         >
       </fieldset>
+      <fieldset>
+        <legend>주문상품을 선택해주세요</legend>
+        <ul>
+          <li>
+            <select name="goods" id="goods">
+              <option value="apple_10kg">사과10kg</option>
+              <option value="apple_20kg" selected>사과20kg</option>
+              <!-- 서버의 전송은 value 값이 전송됨-->
+              <!--selected를 통해 디폴트 값을 지정할 수 있음-->
+              <option value="apple_30kg">사과30kg</option>
+              <option value="apple_40kg">사과40kg</option>
+              <option value="apple_50kg">사과50kg</option>
+            </select>
+          </li>
+        </ul>
+      </fieldset>
     </form>
   </body>
 </html>
