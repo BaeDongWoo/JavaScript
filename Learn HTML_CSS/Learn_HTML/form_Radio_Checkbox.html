@@ -7,7 +7,7 @@
     <title>RadioAndCheckbox</title>
   </head>
   <body>
-    <form action="">
+    <form action="/signup">
       <fieldset>
         <legend>좋아하는 색상을 모두 선택해주세요.</legend>
         <ul>
@@ -79,6 +79,16 @@
           </li>
         </ul>
       </fieldset>
+      <button type="submit">
+        <!--type을 지정하지 않으면 기본적으로 submit을 사용-->
+        <!--submit은 양식 데이터를 서버로 전송할때 사용-->
+        <!--action에 전송하고자하는 서버를 지정하면 submit을 통해 데이터를 전송-->
+        제출하기
+      </button>
+      <button type="reset">리셋</button>
+      <!--입력했던 값을 초기화-->
+      <button type="button" onclick="alert('hello world~!')">버튼</button>
+      <!--기본 행동은 없으면 주로 클릭을 통해 자바스크립트 코드를 명령할때 사용-->
     </form>
   </body>
 </html>
